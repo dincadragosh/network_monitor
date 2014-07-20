@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1405865159 source:/home/dragos/Work/Dizertatie/network_monitor/Detector.cpp
+	<Detector.h>
+
+1405898951 /home/dragos/Work/Dizertatie/network_monitor//Detector.h
+	<crafter.h>
+	<Globals.h>
+
+1405865012 source:/home/dragos/Work/Dizertatie/network_monitor/network_monitor/main.cpp
+	<iostream>
+	<Detector.h>
+
+1405898900 /home/dragos/Work/Dizertatie/network_monitor//Globals.h
+	<iostream>
+	<fstream>
+	<string>
+
+1405897051 source:/home/dragos/Work/Dizertatie/network_monitor/Configuration.cpp
+	<Configuration.h>
+
+1405897712 /home/dragos/Work/Dizertatie/network_monitor//Configuration.h
+	<Globals.h>
+
+1405898394 source:/home/dragos/Work/Dizertatie/network_monitor/Globals.cpp
+	<Globals.h>
+	<Configuration.h>
+

@@ -1,0 +1,17 @@
+#ifndef DETECTOR_H
+#define DETECTOR_H
+
+class Detector
+{
+private:
+	string interface;
+	Sniffer sniffer;
+	
+	Detector(string interface);
+
+public:
+	static getDetector();	
+}
+
+
+#endif
