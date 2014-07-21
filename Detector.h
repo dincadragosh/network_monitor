@@ -3,7 +3,6 @@
 #include <crafter.h>
 #include <Globals.h>
 
-using namespace std;
 using namespace Crafter;
 
 class Detector
@@ -17,15 +16,18 @@ private:
     string  filter;
     Sniffer *sniffer;
 
-    /* constructors */
-    Detector(string interface, string filter);
-
     /* functions */
     static void PacketHandler(Packet* packet, void* user);
 
+    /* constructors */
+    Detector(string interface, string filter);
+
 public:
     /* singleton */
-    static Detector* GetDetector();
+    static Detector* InitDetector(const Configuration& config);
+
+    void StartCapture();
+
 };
 
 #endif

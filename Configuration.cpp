@@ -1,18 +1,35 @@
 #include <Configuration.h>
 
 //Constructors
-Configuration::Configuration()
-    : filterType(FILTER_HTTP)
+Configuration::Configuration(string interface,
+                             FilterType filterType)
+    : interface(interface), filterType(filterType)
 {
 }
 
+//Detector
+void Configuration::SetInterface(string& interface)
+{
+    this->interface = interface;
+}
+
+const string& Configuration::GetInterface() const
+{
+    return this->interface;
+}
+
 //Filter
-FilterType Configuration::GetFilterType()
+FilterType Configuration::GetFilterType() const
 {
     return this->filterType;
 }
 
-string  Configuration::GetPcapFilter()
+void Configuration::SetFilterType(FilterType filterType)
+{
+    this->filterType = filterType;
+}
+
+const string& Configuration::GetPcapFilter() const
 {
     return pcap_filter[this->filterType];
 }

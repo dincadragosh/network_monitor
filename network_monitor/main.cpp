@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    Detector* detector = Detector::GetDetector();
+    Detector* detector = Detector::InitDetector(factoryConfig);
 
     cout << "Hello world!" << endl;
     while(1) {}

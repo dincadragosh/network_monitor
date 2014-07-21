@@ -1,9 +1,21 @@
 #include<Detector.h>
+#include<Configuration.h>
 
-Detector::Detector(string interface, string filter)
-	: interface(interface), filter(filter)
+/* STATIC */
+/* static members */
+Detector* Detector::detector = 0;
+
+/* static functions */
+Detector* Detector::InitDetector(const Configuration& config)
 {
-    sniffer = new Sniffer(filter, interface);
+    if (Detector::detector == 0)
+    {
+        Detector::detector = new Detector(config.GetInterface(), config.GetPcapFilter());
+        Detector::detector->sniffer->SetPacketHandler(Detector::PacketHandler);
+        Detector::detector->sniffer->Spawn(-1);
+    }
+
+    return Detector::detector;
 }
 
 void Detector::PacketHandler(Packet* packet, void* user)
@@ -11,19 +23,15 @@ void Detector::PacketHandler(Packet* packet, void* user)
     cout << "got packet!" << endl;
 }
 
-/* static members */
-Detector* Detector::detector = 0;
+/* NON-STATIC */
 
-
-/* static functions */
-Detector* Detector::GetDetector()
+Detector::Detector(string interface, string filter)
+	: interface(interface), filter(filter)
 {
-    if (Detector::detector == 0)
-    {
-        Detector::detector = new Detector("wlan0", "tcp and dst port 80");
-    }
+    sniffer = new Sniffer(filter, interface);
+}
 
-    Detector::detector->sniffer->Spawn(-1);
-
-    return Detector::detector;
+void Detector::StartCapture()
+{
+    this->sniffer->Spawn(-1);
 }

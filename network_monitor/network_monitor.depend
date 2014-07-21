@@ -25,3 +25,30 @@
 	<Globals.h>
 	<Configuration.h>
 
+1405939998 source:/home/administrator/Work/Dizertatie/network_monitor/Configuration.cpp
+	<Configuration.h>
+
+1405933434 /home/administrator/Work/Dizertatie/network_monitor//Configuration.h
+	<Globals.h>
+
+1405932856 /home/administrator/Work/Dizertatie/network_monitor//Globals.h
+	<iostream>
+	<fstream>
+	<string>
+
+1405951909 source:/home/administrator/Work/Dizertatie/network_monitor/Detector.cpp
+	<Detector.h>
+	<Configuration.h>
+
+1405951641 /home/administrator/Work/Dizertatie/network_monitor//Detector.h
+	<crafter.h>
+	<Globals.h>
+
+1405930810 source:/home/administrator/Work/Dizertatie/network_monitor/Globals.cpp
+	<Globals.h>
+	<Configuration.h>
+
+1405951933 source:/home/administrator/Work/Dizertatie/network_monitor/network_monitor/main.cpp
+	<iostream>
+	<Detector.h>
+

@@ -6,15 +6,24 @@
 class Configuration
 {
 private:
+    //Detector
+    string interface;
+
     //Filter
     FilterType filterType;
 public:
     //Constructors
-    Configuration();
+    Configuration(string iface = "eth0",
+                  FilterType filter = FILTER_HTTP);
+
+    //Detector
+    void SetInterface(string& interface);
+    const string& GetInterface() const;
 
     //Filter
-    FilterType GetFilterType();
-    string GetPcapFilter();
+    FilterType GetFilterType() const;
+    void SetFilterType(FilterType filterType);
+    const string& GetPcapFilter() const;
 };
 
 #endif

@@ -7,8 +7,8 @@ Configuration factoryConfig;
 /* Global Variables */
 string pcap_filter[] =
 {
-    [FILTER_HTTP] = "tcp and dst port 80",
-    [FILTER_ALL]  = "tcp and dst port 80"
+    /* FILTER_HTTP */ "tcp and dst port 80",
+    /* FILTER_ALL */  "tcp and dst port 80"
 };
 
 
