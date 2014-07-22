@@ -15,7 +15,7 @@ extern Configuration factoryConfig;
 
 enum FilterType
 {
-    FILTER_HTTP,
+    FILTER_HTTP_REQUEST,
     FILTER_ALL
 };
 

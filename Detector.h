@@ -21,6 +21,7 @@ private:
 
     /* constructors */
     Detector(string interface, string filter);
+    ~Detector();
 
 public:
     /* singleton */

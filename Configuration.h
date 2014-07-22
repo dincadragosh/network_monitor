@@ -14,7 +14,7 @@ private:
 public:
     //Constructors
     Configuration(string iface = "eth0",
-                  FilterType filter = FILTER_HTTP);
+                  FilterType filter = FILTER_HTTP_REQUEST);
 
     //Detector
     void SetInterface(string& interface);

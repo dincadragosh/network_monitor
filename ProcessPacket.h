@@ -1,7 +1,7 @@
-#ifndef GLOBALS_H
-#define GLOBALS_H
+#ifndef PROCESSPACKET_H
+#define PROCESSPACKET_H
 
-#include<Globals.h>
+#include <Globals.h>
 #include <crafter.h>
 
 using namespace Crafter;
@@ -12,7 +12,12 @@ private:
     FilterType filterType;
 
 public:
-    virtual bool IsMyType(Packet *pkt) = 0;
+    FilterType GetFilterType();
+
+    ProcessPacket(FilterType filterType);
+
+    virtual bool CanBeProcessed(Packet *pkt) = 0;
+    virtual bool Process(Packet *pkt) = 0;
 };
 
 #endif

@@ -31,6 +31,12 @@ Detector::Detector(string interface, string filter)
     sniffer = new Sniffer(filter, interface);
 }
 
+Detector::~Detector()
+{
+    delete this->sniffer;
+}
+
+
 void Detector::StartCapture()
 {
     this->sniffer->Spawn(-1);
