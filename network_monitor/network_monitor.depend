@@ -44,11 +44,23 @@
 	<crafter.h>
 	<Globals.h>
 
-1406037579 source:/home/administrator/Work/Dizertatie/network_monitor/Globals.cpp
+1406038446 source:/home/administrator/Work/Dizertatie/network_monitor/Globals.cpp
 	<Globals.h>
 	<Configuration.h>
 
 1405951933 source:/home/administrator/Work/Dizertatie/network_monitor/network_monitor/main.cpp
 	<iostream>
 	<Detector.h>
+
+1406038156 /home/administrator/Work/Dizertatie/network_monitor/Configuration.h
+	<Globals.h>
+
+1406038470 /home/administrator/Work/Dizertatie/network_monitor/Globals.h
+	<iostream>
+	<fstream>
+	<string>
+
+1406037164 /home/administrator/Work/Dizertatie/network_monitor/Detector.h
+	<crafter.h>
+	<Globals.h>
 
