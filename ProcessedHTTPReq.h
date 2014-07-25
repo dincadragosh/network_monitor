@@ -1,13 +1,13 @@
 #ifndef PROCESSEDHTTPREQ_H
 #define PROCESSEDHTTPREQ_H
 
-class ProcessedHTTPReq
+#import <ProcessedPacket.h>
+
+class ProcessedHTTPReq : public ProcessedPacket
 {
 private:
 
 public:
-    string host;
-    //time_t time;
 
 };
 

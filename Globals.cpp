@@ -7,6 +7,16 @@
 /* Configuration */
 Configuration factoryConfig;
 
+/* ---------------------------
+ * Processed Packets variables
+ * ---------------------------
+ */
+ //Time:
+time_t time_current;
+//Info structures:
+// - Active
+map<ClientInfo, map<string, ProcessedPacket* >>
+
 string pcap_filter[] =
 {
     /* FILTER_HTTP_REQUEST */ "tcp and dst port 80",
