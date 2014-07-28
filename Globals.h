@@ -11,8 +11,20 @@ using namespace std;
 class Configuration;
 extern Configuration factoryConfig;
 
-/* Filter */
+/* ---------------------------
+ * Processed Packets variables
+ * ---------------------------
+ */
+ typedef byte Mac[6];
 
+//Time:
+#define UNIT_TIME 60 //sec
+extern time_t time_current;
+//Info structures:
+// - Active
+
+
+/* Filter */
 enum FilterType
 {
     FILTER_HTTP_REQUEST,
@@ -20,8 +32,5 @@ enum FilterType
 };
 
 extern string pcap_filter[];
-
-/*factory config */
-extern FilterType factory_filter;
 
 #endif
