@@ -1,21 +1,20 @@
 #include <Globals.h>
+#include <MonitoringSystem.h>
 #include <Configuration.h>
+#include <Data.h>
 
 
 /* Global Variables */
 
-/* Configuration */
-Configuration factoryConfig;
+/* Monitoring systems */
+MonitoringSystem *ethMonitor = 0;
+MonitoringSystem *wlanMonitor = 0;
 
-/* ---------------------------
- * Processed Packets variables
- * ---------------------------
- */
- //Time:
+/* Configuration */
+Configuration ethFactoryConfig;
+
+ //Time
 time_t time_current;
-//Info structures:
-// - Active
-map<ClientInfo, map<string, ProcessedPacket* >>
 
 string pcap_filter[] =
 {

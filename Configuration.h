@@ -1,7 +1,7 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
-#include<Globals.h>
+#include <Globals.h>
 
 class Configuration
 {
@@ -13,7 +13,7 @@ private:
     FilterType filterType;
 public:
     //Constructors
-    Configuration(string iface = "eth0",
+    Configuration(string iface = "wlan0",
                   FilterType filter = FILTER_HTTP_REQUEST);
 
     //Detector

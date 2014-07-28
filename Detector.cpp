@@ -1,34 +1,23 @@
-#include<Detector.h>
-#include<Configuration.h>
+#include <Detector.h>
+#include <Configuration.h>
+#include <MonitoringSystem.h>
+#include <ProcessedHTTPReq.h>
 
-/* STATIC */
-/* static members */
-Detector* Detector::detector = 0;
-
-/* static functions */
-Detector* Detector::InitDetector(const Configuration& config)
+/* non-static functions */
+Detector::Detector(MonitoringSystem& ms)
+    : master(&ms), processorHTTPreq(ms.data)
 {
-    if (Detector::detector == 0)
-    {
-        Detector::detector = new Detector(config.GetInterface(), config.GetPcapFilter());
-        Detector::detector->sniffer->SetPacketHandler(Detector::PacketHandler);
-        Detector::detector->sniffer->Spawn(-1);
-    }
+    //processors initialization
 
-    return Detector::detector;
-}
+    //sniffer
+    this->sniffer = new Sniffer(ms.configuration.GetPcapFilter(), ms.configuration.GetInterface());
 
-void Detector::PacketHandler(Packet* packet, void* user)
-{
-    cout << "got packet!" << endl;
-}
+//    if (!ms.configuration.GetInterface().compare(0, 3, "eth"))
+        this->sniffer->SetPacketHandler(Detector::EthPacketHandler);
+//    if (!ms.configuration.GetInterface().compare(0, 4, "wlan"))
+//        this->sniffer->SetPacketHandler(Detector::WlanPacketHandler);
 
-/* NON-STATIC */
-
-Detector::Detector(string interface, string filter)
-	: interface(interface), filter(filter)
-{
-    sniffer = new Sniffer(filter, interface);
+    this->StartCapture();
 }
 
 Detector::~Detector()
@@ -36,8 +25,20 @@ Detector::~Detector()
     delete this->sniffer;
 }
 
-
 void Detector::StartCapture()
 {
     this->sniffer->Spawn(-1);
+}
+
+/* static functions */
+void Detector::EthPacketHandler(Packet* packet, void* user)
+{
+    cout << "got packet on eth!" << endl;
+//    if(ethMonitor->detector.processorHTTPreq.CanBeProcessed(packet))
+//        ethMonitor->detector.processorHTTPreq.ProcessPacket(packet);
+}
+
+void Detector::WlanPacketHandler(Packet* packet, void* user)
+{
+    cout << "got packet on wi-fi!" << endl;
 }

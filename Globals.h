@@ -7,22 +7,18 @@
 
 using namespace std;
 
+/* Monitoring systems */
+class MonitoringSystem;
+extern MonitoringSystem *ethMonitor;
+extern MonitoringSystem *wlanMonitor;
+
 /* Config */
 class Configuration;
-extern Configuration factoryConfig;
-
-/* ---------------------------
- * Processed Packets variables
- * ---------------------------
- */
- typedef byte Mac[6];
+extern Configuration ethFactoryConfig;
 
 //Time:
 #define UNIT_TIME 60 //sec
 extern time_t time_current;
-//Info structures:
-// - Active
-
 
 /* Filter */
 enum FilterType

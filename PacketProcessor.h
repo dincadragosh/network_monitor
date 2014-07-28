@@ -6,23 +6,24 @@
 
 using namespace Crafter;
 
+class Data;
+
 class PacketProcessor
 {
 private:
-    vector<PacketProcessor*> processors;
 
-    PacketProcessor* GetPacketProcessor(FilterType filterType);
 protected:
     FilterType filterType;
 
-    PacketProcessor(FilterType filterType);
-    FilterType GetFilterType();
-public:
-    PacketProcessor(vector<FilterType> filterTypes);
-    virtual ~PacketProcessor();
+    Data& data;
 
-    virtual bool CanBeProcessed(Packet *pkt);
-    virtual bool ProcessPacket(Packet *pkt);
+    PacketProcessor(FilterType filterType, Data& data);
+    FilterType GetFilterType();
+
+public:
+
+    bool CanBeProcessed(Packet *pkt);
+    bool ProcessPacket(Packet *pkt);
 };
 
 #endif

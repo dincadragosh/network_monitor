@@ -37,8 +37,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../ClientInfo.cpp" />
+		<Unit filename="../ClientInfo.h" />
+		<Unit filename="../Configuration.cpp" />
+		<Unit filename="../Configuration.h" />
+		<Unit filename="../Data.cpp" />
+		<Unit filename="../Data.h" />
 		<Unit filename="../Detector.cpp" />
 		<Unit filename="../Detector.h" />
+		<Unit filename="../Globals.cpp" />
+		<Unit filename="../Globals.h" />
+		<Unit filename="../MonitoringSystem.cpp" />
+		<Unit filename="../MonitoringSystem.h" />
+		<Unit filename="../PacketProcessor.cpp" />
+		<Unit filename="../PacketProcessor.h" />
+		<Unit filename="../PacketProcessorHTTPReq.cpp" />
+		<Unit filename="../PacketProcessorHTTPReq.h" />
+		<Unit filename="../ProcessedHTTPReq.cpp" />
+		<Unit filename="../ProcessedHTTPReq.h" />
+		<Unit filename="../ProcessedPacket.cpp" />
+		<Unit filename="../ProcessedPacket.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

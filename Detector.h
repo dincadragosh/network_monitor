@@ -2,33 +2,37 @@
 #define DETECTOR_H
 #include <crafter.h>
 #include <Globals.h>
+#include <PacketProcessorHTTPReq.h>
 
 using namespace Crafter;
+
+class MonitoringSystem;
 
 class Detector
 {
 private:
-    /* static members*/
-    static Detector *detector;
-
     /* members */
-    string  interface;
-    string  filter;
     Sniffer *sniffer;
 
+    MonitoringSystem *master;
+
+    //Processors:
+    PacketProcessorHTTPReq processorHTTPreq;
+
     /* functions */
-    static void PacketHandler(Packet* packet, void* user);
-
-    /* constructors */
-    Detector(string interface, string filter);
+    // constructors
+    Detector(MonitoringSystem& ms);
     ~Detector();
-
-public:
-    /* singleton */
-    static Detector* InitDetector(const Configuration& config);
 
     void StartCapture();
 
+    //Pachet handlers
+    static void EthPacketHandler(Packet* packet, void* user); //for the eth device
+    static void WlanPacketHandler(Packet* packet, void* user); //for the wi-fi device
+
+public:
+
+    friend class MonitoringSystem;
 };
 
 #endif

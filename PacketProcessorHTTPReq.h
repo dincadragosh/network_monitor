@@ -1,14 +1,16 @@
 #ifndef PACKETPROCESSORHTTPREQ_H
 #define PACKETPROCESSORHTTPREQ_H
 
-class PacketProcessorHTTPReq : public PacketProcessor
+#include <PacketProcessor.h>
+
+class PacketProcessorHTTPReq: public PacketProcessor
 {
 private:
 public:
-    PacketProcessorHTTPReq();
+    PacketProcessorHTTPReq(Data &data);
 
-    virtual bool CanBeProcessed(Packet *pkt);
-    virtual bool ProcessPacket(Packet *pkt);
+    bool CanBeProcessed(Packet *pkt);
+    bool ProcessPacket(Packet *pkt);
 };
 
 #endif
